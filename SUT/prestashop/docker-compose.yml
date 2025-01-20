@@ -3,6 +3,7 @@ name: 'prestashop'
 services:
   mysql:
     container_name: some-mysql
+    platform: linux/amd64
     image: mysql:5.7
     restart: unless-stopped
     environment:
