@@ -1,15 +1,22 @@
 /*
- *  This is a good place to put common test data, project-wide constants, etc.
+ * This file contains test data, project-wide constants, and XPath selectors.
  */
 
-const URL = 'https://www.google.com/?hl=en';
+const URL = 'http://localhost:8080/';
 
-const xpaths = {
-  searchWindow: {
-    searchInput: '//textarea[@aria-label="Search"]',
-    searchButton: '//input[@aria-label="Google Search"]',
-    feelingLuckyButton: '//input[@aria-label="I\'m Feeling Lucky"]'
+const XPATHS = {
+  homepage: {
+    productLink: "//a[contains(text(), 'Mug The best is yet to come')]",
+    addToCartButton: "//button[contains(@class, 'add-to-cart')]",
+    checkoutPopupButton: "//a[contains(@class, 'btn-primary') and contains(text(), 'Proceed to checkout')]"
+  },
+  cartPage: {
+    pageIdentifier: "//h1[contains(text(), 'Shopping Cart') or contains(text(), 'Cart')]",
+    checkoutButton: "//a[contains(@class, 'btn') and contains(text(), 'Proceed to checkout')]"
+  },
+  checkoutPage: {
+    pageIdentifier: "//section[@id='checkout-personal-information-step']"
   }
-}
+};
 
-const searchTerm = 'pizza'
+const PRODUCT_NAME = 'Mug The best is yet to come';
