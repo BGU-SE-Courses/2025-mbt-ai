@@ -38,6 +38,27 @@ public class StepDefinitions {
         driver.get("http://localhost:8080/");
         Thread.sleep(2000); // Wait for page to load
     }
+    @When("user is logged in as {string} {string}")
+    public void login(String email, String password) throws InterruptedException {
+        // Locate and click on the "Sign In" button or link on the homepage
+        WebElement signInButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector("a[title='Log in to your customer account']")));
+        signInButton.click();
+        Thread.sleep(2000); // Wait for navigation to the login page
+
+        WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("field-email")));
+        WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("field-password")));
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("submit-login")));
+
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+        submitButton.click();
+        Thread.sleep(3000); // Ensure login completes
+
+        // Validate login by checking if "Sign out" button appears
+        WebElement logoutButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".logout")));
+        Assertions.assertTrue(logoutButton.isDisplayed(), "Login failed!");
+    }
 
     @When("adds {string} to the cart")
     public void userAddsProductToCart(String productName) throws InterruptedException {
