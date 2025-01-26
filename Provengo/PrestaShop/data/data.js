@@ -7,7 +7,7 @@ const URL = 'http://localhost:8080/';
 const XPATHS = {
   homepage: {
     loginButton: "//*[@id=\"_desktop_user_info\"]/div/a/span",
-    productLink: "//a[contains(text(), 'Brown bear - Vector graphics')]",
+    productLink: "//*[@id=\"content\"]/section[3]/div/div[7]/article/div/div[2]/h3/a",
     addToCartButton: "//*[@id=\"add-to-cart-or-refresh\"]/div[2]/div/div[2]/button",
     checkoutPopupButton: "//*[@id=\"blockcart-modal\"]/div/div/div[2]/div/div[2]/div/div/a"
   },
@@ -22,7 +22,8 @@ const XPATHS = {
     checkoutButton: "//*[@id=\"main\"]/div/div[2]/div[1]/div[2]/div/a"
   },
   checkoutPage: {
-    pageIdentifier: "//*[@id=\"checkout\"]"
+    pageIdentifier: "//*[@id=\"checkout\"]",
+    productPrice: "//*[@id=\"cart-subtotal-products\"]/span[2]" // XPath for the product price on the checkout page
   }
 };
 
@@ -49,7 +50,7 @@ const XPATHS_Admin = {
     productsOption: "//*[@id=\"subtab-AdminProducts\"]"
   },
   productPage: {
-    productLink: "//a[contains(text(), 'Hummingbird cushion')]", // Example product
+    productLink: "//*[@id=\"product_grid_table\"]/tbody/tr[7]/td[4]/a",
     pricingTab: "//*[@id=\"product_pricing-tab-nav\"]", // Pricing tab
     retailPriceField: "//*[@id=\"product_pricing_retail_price_price_tax_excluded\"]",
     saveButton: "//*[@id=\"product_footer_save\"]"
@@ -61,4 +62,5 @@ const XPATHS_Admin = {
 
 const ADMIN_EMAIL = 'demo@prestashop.com';
 const ADMIN_PASSWORD = 'prestashop_demo';
-const NEW_PRICE = '25.00';
+const OLD_PRICE = '20.00'; // Add the old price constant
+const NEW_PRICE = '15.00';

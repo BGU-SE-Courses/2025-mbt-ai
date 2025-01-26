@@ -62,6 +62,14 @@ function verifyCheckoutPage(session) {
   session.waitForVisibility(XPATHS.checkoutPage.pageIdentifier, 5000); // Wait until the "Personal Information" heading is visible
 }
 
+/**
+ * Verify that the product price on the checkout page matches the expected price.
+ */
+function verifyProductPrice(session, expectedPrice) {
+  session.waitForVisibility(XPATHS.checkoutPage.productPrice, 5000); // Wait until the product price is visible
+  session.assertText(XPATHS.checkoutPage.productPrice, "€" + expectedPrice); // Check if the product price matches the expected price
+}
+
 //------------------------------------------------Change product price ------------------------------------------------------
 
 /**

@@ -4,15 +4,24 @@
  * List of events "of interest" that we want test suites to cover.
  */
 const GOALS = [
-    any(/Howdy/),
-    any(/Mars/),
-    Ctrl.markEvent("Classic!")
+    any(/AddProductToCart/),
+    any(/Checkout/),
+    any(/CheckoutComplete/),
+    any(/ChangeProductPrice/),
+    any(/ChangeProductPriceComplete/),
+    any(/PriceValidation/)
 ];
 
 const makeGoals = function(){
-    return [ [ any(/Howdy/), any(/Venus/) ],
-             [ any(/Mars/) ],
-             [ Ctrl.markEvent("Classic!") ] ];
+    const pairs = [];
+    for (let i = 0; i < GOALS.length; i++) {
+        for (let j = 0; j < GOALS.length; j++) {
+            if (i !== j) {
+                pairs.push([GOALS[i], GOALS[j]]);
+            }
+        }
+    }
+    return pairs;
 }
 
 /**
