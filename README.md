@@ -4,29 +4,35 @@ This is a repository for the system-testing assignment of the Software Quality E
 ## Assignment Description
 In this assignment, we tested an open-source software called [PrestaShop](https://demo.prestashop.com/#/en/front).
 
-$$*TODO* Add some general description about the software$$
+PrestaShop is an open-source e-commerce web application built to offer a great shopping experience for both merchants and customers. It is written in PHP and:
+
+Easy to customize: Merchants can adjust it to fit their specific needs.
+Supports multiple languages: It works in many languages and is adapted for different countries.
+Packed with features: It integrates with major payment services, has a mobile-friendly design for both the store and admin panel, and includes many add-ons to extend its functionality.
 
 ## Installation
 PrestaShop is an Open Source e-commerce web application, committed to providing the best shopping cart experience for both merchants and customers. It is written in PHP, is highly customizable, supports all the major payment services, is translated in many languages and localized for many countries, has a fully responsive design (both front and back office), etc.
 
 ## What we tested
-$$*TODO* Add a description of the module and the user stories that you chose to test.
-For example, in the case of the Moodle example, you can write something like this:
+In this assignment, we focused on testing two key features of PrestaShop: updating a product price as an admin and adding a product to the cart as a user. Below are the detailed scenarios for each feature:
 
-We tested the quiz module that allows for creating and taking quizzes. We chose to test the following user stories: 
+Feature: Admin updates a product price in PrestaShop
+Scenario: Admin successfully changes the price of a product
+Given the admin is on the PrestaShop login page.
+When the admin logs in with email and password.
+And navigates to the product catalog.
+And selects the product name.
+And updates the retail price to price>.
+Then the product price should be updated successfully.
 
-*User story:* User checks out a product
+Feature: User adds a product to the cart and proceeds to checkout
+Scenario: User successfully adds a product and reaches the checkout page
+Given the user is on the PrestaShop homepage.
+When the user logs in with email and password.
+And adds the product name to the cart.
+And navigates to the cart page and clicks checkout.
+Then the user should be on the checkout page.
 
-*Preconditions:* There is a course with a teacher
-
-*Expected outcome:* The quiz is added to the course.
-
-*User story:* Admin changes product price.
-
-*Preconditions:* There is a course with a quiz with two yes/no questions and the quiz grade is calculated automatically and the grade is visible to the students upon submission.
-
-*Expected outcome:* The student receives 100.
-$$
 
 ## How we tested
 We used two different testing methods:
