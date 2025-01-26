@@ -17,20 +17,33 @@ PrestaShop is an Open Source e-commerce web application, committed to providing 
 In this assignment, we focused on testing two key features of PrestaShop: updating a product price as an admin and adding a product to the cart as a user. Below are the detailed scenarios for each feature:
 
 Feature: Admin updates a product price in PrestaShop
+
 Scenario: Admin successfully changes the price of a product
+
 Given the admin is on the PrestaShop login page.
+
 When the admin logs in with email and password.
+
 And navigates to the product catalog.
+
 And selects the product name.
-And updates the retail price to price>.
+
+And updates the retail price to price.
+
 Then the product price should be updated successfully.
 
 Feature: User adds a product to the cart and proceeds to checkout
+
 Scenario: User successfully adds a product and reaches the checkout page
+
 Given the user is on the PrestaShop homepage.
+
 When the user logs in with email and password.
+
 And adds the product name to the cart.
+
 And navigates to the cart page and clicks checkout.
+
 Then the user should be on the checkout page.
 
 
