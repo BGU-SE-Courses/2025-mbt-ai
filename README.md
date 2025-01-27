@@ -16,30 +16,17 @@ PrestaShop is an Open Source e-commerce web application, committed to providing 
 ## What we tested
 In this assignment, we focused on testing two key features of PrestaShop: updating a product price as an admin and adding a product to the cart as a user. Below are the detailed scenarios for each feature:
 
-🛠 Feature: Admin updates a product price in PrestaShop.
+🛠 Scenario: Admin updates a product price in PrestaShop.
 
-Scenario: Admin successfully changes the price of a product.
+Preconditions: The admin logs in with email and password, and the product exists in the product catalog. 
 
-Given the admin is on the PrestaShop login page. 
-When the admin logs in with email and password. 
-And the admin navigates to the product catalog.  
-And the admin selects the product name.  
-And the admin updates the retail price to price.
-Then the product price should be updated successfully.
+Postcondition: The product's price is updated in the product catalog.
 
-🛒 Feature: User adds a product to the cart and proceeds to checkout.
+🛒 Scenario: The user adds a product to the cart and proceeds to checkout.
 
-Scenario: User successfully adds a product and reaches the checkout page.
+Preconditions: The user has valid login credentials, and the product is available on the storefront.
 
-Given the user is on the PrestaShop homepage.  
-When the user logs in with email and password. 
-And adds name to the cart.  
-And the user is on the cart page and clicks checkout.  
-Then the user should be on the checkout page.  
-
-
-
-
+Postconditions: The user is successfully redirected to the checkout page, the product is displayed in the shopping cart summary, and the system is ready for the user to complete the purchase.
 
 
 ## How we tested
@@ -49,18 +36,4 @@ We used two different testing methods:
 
 Each of the testing methods is elaborated in its own directory. 
 
-## Results
-Update all README.md files (except for d-e, see Section 1). Specifically, replace all $$*TODO*…$$ according to the instructions inside the $$.
 
-## Detected Bugs
-We detected the following bugs:
-
-1. Bug 1: 
-   1. General description: ...
-   2. Steps to reproduce: ...
-   3. Expected result: ...
-   4. Actual result: ...
-   5. Link to the bug report: (you are encouraged to report the bug to the developers of the software)
-2. Bug 2: ...
-
-$$*TODO* if you did not detect the bug, you should delete this section$$  
