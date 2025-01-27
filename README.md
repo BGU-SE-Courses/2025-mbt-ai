@@ -18,13 +18,13 @@ In this assignment, we focused on testing two key features of PrestaShop: updati
 
 🛠 Scenario: Admin updates a product price in PrestaShop.
 
-Preconditions: The admin logs in with email and password, and the product exists in the product catalog. 
+Preconditions: The admin exists in the system, and the product exists in the product catalog. 
 
 Postcondition: The product's price is updated in the product catalog.
 
 🛒 Scenario: The user adds a product to the cart and proceeds to checkout.
 
-Preconditions: The user has valid login credentials, and the product is available on the storefront.
+Preconditions: The user exists in the system, and the product is available on the storefront.
 
 Postconditions: The user is successfully redirected to the checkout page, the product is displayed in the shopping cart summary, and the system is ready for the user to complete the purchase.
 
